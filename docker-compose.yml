@@ -1,0 +1,6 @@
+version: "3.7"
+
+services:
+  db:
+    container-name: mysql-database
+    image: mysql:8.0.36
