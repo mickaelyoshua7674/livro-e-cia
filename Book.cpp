@@ -20,7 +20,6 @@ int getBookID() {
     unsigned int id;
     char ch;
     std::ifstream f(fileName);
-    std::string line;
     if (f.is_open()) {
         f.seekg(-1, std::ios::end); // go to the last position from the end of file (before EOF)
         while (true) {
