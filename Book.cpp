@@ -33,15 +33,21 @@ int getBookID() {
                 f.seekg(-2, std::ios::cur); // go back one character from the current position
             }
         }
-        std::getline(f, line);
-        std::cout<<line<<"\n";
+        std::getline(f, line); // get last line
+        for (int i=1; i<line.length(); i++) {
+            if (line[i] == ',') { // search for first ','
+                id = std::stoi(line.substr(0,i))+1; // get substring of id, convert to integer and add 1
+                break;
+            }
+        }
+        f.close();
     } else id = 1;
-    f.close();
-    return 0;
+    return id;
 }
 
 Book getBookData() {
     Book newBook;
+    newBook.id = getBookID();
     std::cout<<"Name: "; std::cin>>newBook.name; std::cout<<"\n";
     std::cout<<"Author: "; std::cin>>newBook.author; std::cout<<"\n";
     return newBook;
@@ -68,14 +74,9 @@ std::ostream& operator<<(std::ostream& out, const Book& b) {
 }
 
 int main() {
-    Book estudo_naa;
-    estudo_naa.id = 1;
-    estudo_naa.name = "Bíblia de Estudo NAA";
-    estudo_naa.author = "Unknown";
+    Book newBook = getBookData();
+    saveBook(newBook);
 
-    int id = getBookID();
-    // Book newBook = getBookData();
-
-    // saveBook(estudo_naa);
-    // saveBook(newBook);
+    Book newBook2 = getBookData();
+    saveBook(newBook2);
 }
