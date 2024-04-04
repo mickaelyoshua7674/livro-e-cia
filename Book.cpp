@@ -14,7 +14,9 @@ inline bool fileExists(const std::string& name) {
     if (f.is_open()) return true;
     else return false;
 }
-
+/*
+Search if book csv file exists, then return the proper id for register a new book
+*/
 int getBookID() {
     std::string line;
     unsigned int id;
