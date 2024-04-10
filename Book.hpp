@@ -1,7 +1,9 @@
-#include <iostream>
-#include <fstream>
+#ifndef BOOK_CLASS // make sure the header is included once
 #define BOOKS_FILENAME "./books.csv"
 #define DELIMITER ','
+#define BOOK_CLASS
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 /*
@@ -89,12 +91,4 @@ ostream& operator<<(ostream& out, const Book& b) {
     return out;
 }
 
-int main() {
-    Book newBook;
-    newBook.saveBook();
-    cout<<newBook<<"\n\n";
-
-    Book newBook2;
-    newBook2.saveBook();
-    cout<<newBook2<<"\n\n";
-}
+#endif
