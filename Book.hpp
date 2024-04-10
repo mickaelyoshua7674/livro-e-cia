@@ -80,8 +80,6 @@ class Book {
             } else idCollected = 1;
             return idCollected;
         }
-
-
 };
 
 ostream& operator<<(ostream& out, const Book& b) {
