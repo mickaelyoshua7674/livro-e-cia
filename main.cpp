@@ -3,9 +3,9 @@
 int main() {
     Book newBook;
     newBook.saveBook();
-    cout<<newBook<<"\n\n";
+    cout<<newBook<<endl<<endl;
 
     Book newBook2;
     newBook2.saveBook();
-    cout<<newBook2<<"\n\n";
+    cout<<newBook2<<endl<<endl;
 }

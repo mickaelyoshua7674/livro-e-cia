@@ -26,8 +26,8 @@ class Book {
         */
         Book() {
             id = getBookID();
-            cout<<"Name: "; cin>>name; cout<<"\n";
-            cout<<"Author: "; cin>>author; cout<<"\n";
+            cout<<"Name: "; cin>>name; cout<<endl;
+            cout<<"Author: "; cin>>author; cout<<endl;
         }
 
         /*
@@ -38,11 +38,11 @@ class Book {
             ofstream booksFile;
             if (fileExists(BOOKS_FILENAME)) {
                 booksFile.open(BOOKS_FILENAME, ios::app);
-                booksFile<<"\n"<<id<<DELIMITER<<name<<DELIMITER<<author;
+                booksFile<<endl<<id<<DELIMITER<<name<<DELIMITER<<author;
             } else {
                 booksFile.open(BOOKS_FILENAME);
                 booksFile<<"id"<<DELIMITER<<"name"<<DELIMITER<<"author";
-                booksFile<<"\n"<<id<<DELIMITER<<name<<DELIMITER<<author;
+                booksFile<<endl<<id<<DELIMITER<<name<<DELIMITER<<author;
             }
             booksFile.close();
         }
@@ -83,9 +83,9 @@ class Book {
 };
 
 ostream& operator<<(ostream& out, const Book& b) {
-    out<<"ID: "<<b.id<<"\n";
-    out<<"Name: "<<b.name<<"\n";
-    out<<"Author: "<<b.author<<"\n";
+    out<<"ID: "<<b.id<<endl;
+    out<<"Name: "<<b.name<<endl;
+    out<<"Author: "<<b.author<<endl;
     return out;
 }
 
